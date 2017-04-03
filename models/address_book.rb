@@ -13,9 +13,7 @@ class AddressBook
     index = 0
     entries.each do |entry|
       # #10
-      if name < entry.name
-        break
-      end
+      break if name < entry.name
       index+= 1
     end
     # #11
