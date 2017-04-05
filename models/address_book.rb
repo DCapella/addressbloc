@@ -47,7 +47,8 @@ class AddressBook
   end
 
   def nuke
-    0..entries.length.times { entries.delete_at(0) }
+    #0..entries.length.times { entries.delete_at(0) }
+    @entries = []
   end
 
 end
