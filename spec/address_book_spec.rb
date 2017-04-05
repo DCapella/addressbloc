@@ -1,18 +1,15 @@
 require_relative '../models/address_book'
 
 RSpec.describe AddressBook do
-  # #1
   let(:book) { AddressBook.new }
 
 
-  # #6
   def check_entry(entry, expected_name, expected_number, expected_email)
     expect(entry.name).to eq expected_name
     expect(entry.phone_number).to eq expected_number
     expect(entry.email).to eq expected_email
   end
 
-  # #2
   describe "attributes" do
 
     it "responds to entries" do
@@ -49,7 +46,6 @@ RSpec.describe AddressBook do
   # Test that AddressBook's .import_from_csv() method is working as expected
   describe "#import_from_csv" do
     it "imports the correct number of entries" do
-      # #3
       book.import_from_csv("entries.csv")
       book_size = book.entries.size
 
@@ -57,13 +53,11 @@ RSpec.describe AddressBook do
       expect(book_size).to eq 5
     end
 
-    # #4
     it "imports the 1st entry" do
       book.import_from_csv("entries.csv")
       # Check the first entry
       entry_one = book.entries[0]
 
-      # #5
       check_entry(entry_one, "Bill", "555-555-4854", "bill@blocmail.com")
     end
 

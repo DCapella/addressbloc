@@ -1,12 +1,9 @@
 require_relative '../models/entry'
 
 RSpec.describe Entry do
-  # #2
   describe "attributes" do
     let(:entry) { Entry.new('Ada Lovelace', '010.012.1815', 'augusta.king@lovelace.com')}
-    # #3
     it "responds to name" do
-      # #4
       expect(entry).to respond_to(:name)
     end
 
@@ -31,12 +28,10 @@ RSpec.describe Entry do
     end
   end
 
-  # #5
   describe "#to_s" do
     it "prints an entry as a string" do
       entry = Entry.new('Ada Lovelace', '010.012.1815', 'augusta.king@lovelace.com')
       expected_string = "Name: Ada Lovelace\nPhone Number: 010.012.1815\nEmail: augusta.king@lovelace.com"
-      # #6
       expect(entry.to_s).to eq(expected_string)
     end
   end
