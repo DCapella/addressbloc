@@ -46,4 +46,8 @@ class AddressBook
     return nil
   end
 
+  def nuke
+    0..entries.length.times { entries.delete_at(0) }
+  end
+
 end
